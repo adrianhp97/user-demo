@@ -1,5 +1,5 @@
 # USER DEMO API
-Repository for the User Demo project
+Repository for the User Demo API project
 
 # How to build
 Development so far has been using Linux. Requirements:
