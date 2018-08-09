@@ -1,0 +1,49 @@
+version: '2.0'
+
+services:
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 1234:1234
+
+  db:
+    image: postgres:10
+    restart: always
+    volumes:
+      - db:/var/lib/postgres
+    environment:
+      - POSTGRES_DB=userDemo
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+
+  redis:
+    image: redis:alpine
+    restart: on-failure
+
+  web:
+    image: user-demo
+    build: .
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    depends_on:
+      - db
+      - redis
+    environment:
+      NODE_ENV: development # TODO: change this to 'production' on production
+      API_PORT: 3000
+      API_SECRET: "[ very_secret ]" # TODO: change this on production
+      DB_HOST: db
+      DB_USER: admin
+      DB_PASSWORD: admin
+      DB_DATABASE: userDemo
+      REDIS_HOST: redis
+      REDIS_PORT: 6379 # Using default redis image port
+
+volumes:
+  db:
+    driver: local
+   

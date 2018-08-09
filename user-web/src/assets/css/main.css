@@ -1,0 +1,226 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:100,400,300,500,600,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700);
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+/*-----------------------------------------
+
+Table of Contents:
+
+Global
+Card
+Navigator
+NotFound
+Profile
+Post
+------------------------------------------
+/*----------------------------------------
+  Global
+------------------------------------------*/
+body {
+  background-color: #03b98f;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #108d6f;
+  border-color: #108d6f;
+  box-shadow: none;
+  outline: none;
+}
+
+.btn-primary {
+  color: #ffffff;
+  background-color: #007b5e;
+  border-color: #007b5e;
+}
+
+/*----------------------------------------
+  Card
+------------------------------------------*/
+.card {
+  border: none;
+  background: #ffffff;
+}
+
+.image-flip:hover .backside,
+.image-flip.hover .backside {
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  border-radius: .25rem;
+}
+
+.image-flip:hover .frontside,
+.image-flip.hover .frontside {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.mainflip {
+  -webkit-transition: 1s;
+  -webkit-transform-style: preserve-3d;
+  -ms-transition: 1s;
+  -moz-transition: 1s;
+  -moz-transform: perspective(1000px);
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transition: 1s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.frontside {
+  position: relative;
+  -webkit-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  z-index: 2;
+  margin-bottom: 30px;
+}
+
+.backside {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: white;
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  -o-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+  -webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+  -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+  box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+}
+
+.frontside,
+.backside {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: 1s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transition: 1s;
+  -moz-transform-style: preserve-3d;
+  -o-transition: 1s;
+  -o-transform-style: preserve-3d;
+  -ms-transition: 1s;
+  -ms-transform-style: preserve-3d;
+  transition: 1s;
+  transform-style: preserve-3d;
+}
+
+.frontside .card,
+.backside .card {
+  min-height: 312px;
+  min-width: 350px;
+}
+
+.backside .card a {
+  font-size: 18px;
+}
+
+.frontside .card .card-title,
+.backside .card .card-title {
+  color: #007b5e;
+}
+
+.frontside .card .card-body img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+/*----------------------------------------
+  Navigator
+------------------------------------------*/
+nav {
+  margin-bottom: 20px;
+}
+
+/*----------------------------------------
+  NotFound
+------------------------------------------*/
+.error-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.error-actions {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.error-actions .btn {
+  margin-right: 10px;
+}
+
+/*----------------------------------------
+  Profile
+------------------------------------------*/
+
+.profile-wrapper,
+.album-list-wrapper,
+.post-list-wrapper {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.profile-wrapper .card,
+.album-list-wrapper .card,
+.post-list-wrapper .card {
+  padding: 30px;
+}
+
+.profile-wrapper .card img {
+  width: 150px;
+}
+
+.album-list-wrapper .card .card-body h4.card-title,
+.post-list-wrapper .card .card-body h4.card-title {
+  width: 100%;
+  display: inline-block;
+}
+
+.album-list-wrapper .card .card-body .btn-album {
+  margin: 5px;
+}
+
+.post-list-wrapper .card .card-body .card-post {
+  padding: 5px;
+  border: 1px solid #007b5e;
+}
+
+.post-list-wrapper .card .card-body .card-margin {
+  margin-bottom: 10px;
+}
+
+.post-list-wrapper .card .card-body .card-post .delete-button {
+  margin-top: -25px;
+}
+
+/*----------------------------------------
+  Post
+------------------------------------------*/
+.card-comment {
+  margin-bottom: 5px;
+}
+
+.card .edit-button,
+.card .delete-button {
+  float: right;
+  margin: 5px;
+}
+
+.card .delete-button {
+  background-color: #922c2c;
+  border-color: #922c2c;
+}
+
+.post-list-wrapper .card .edit-button {
+  margin-right: -25px;
+  margin-top: -25px;
+}
