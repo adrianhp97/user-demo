@@ -50,8 +50,8 @@ To make a model, migration, and seed file, do the following.
 
 # API
 ## Login
-URL : http://localhost:3000/login/
-Request:
+URL : http://localhost:3000/login/  
+Request:  
 ```
 POST /login/ HTTP/1.1
 Host: localhost:3000
@@ -71,16 +71,16 @@ Data:
 }
 ```
 ## Logout
-URL : http://localhost:3000/logout/
-Request:
+URL : http://localhost:3000/logout/  
+Request:  
 ```
 GET /logout HTTP/1.1
 Host: localhost:3000
 Cache-Control: no-cache
 ```
 ## Create
-URL : http://localhost:3000/users/
-Request:
+URL : http://localhost:3000/users/  
+Request:  
 ```
 POST /users/ HTTP/1.1
 Host: localhost:3000
@@ -97,8 +97,8 @@ name=adrian
 phone=082113311212
 ```
 ## Update
-URL : http://localhost:3000/users/:id
-Request:
+URL : http://localhost:3000/users/:id  
+Request:  
 ```
 PATCH /users/1 HTTP/1.1
 Host: localhost:3000
@@ -112,24 +112,24 @@ Data:
 password=demodemo1234
 ```
 ## Get All User
-URL : http://localhost:3000/users
-Request:
+URL : http://localhost:3000/users  
+Request:  
 ```
 GET /users HTTP/1.1
 Host: localhost:3000
 Cache-Control: no-cache
 ```
 ## Get User by Id
-URL : http://localhost:3000/users/:id
-Request:
+URL : http://localhost:3000/users/:id  
+Request:  
 ```
 GET /users/1 HTTP/1.1
 Host: localhost:3000
 Cache-Control: no-cache
 ```
 ## Delete User by Id
-URL : http://localhost:3000/users/:id
-Request:
+URL : http://localhost:3000/users/:id  
+Request:  
 ```
 DELETE /users/1 HTTP/1.1
 Host: localhost:3000
